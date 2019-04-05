@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bekar.smartmedicalcare">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar">
+        <activity android:name=".Activity.AdminPanelActivity"></activity>
+        <activity android:name=".Activity.PatientsActivity" />
+        <activity android:name=".Activity.PrescripsionActivity" />
+        <activity android:name=".Activity.CallADoctorActivity" />
+        <activity android:name=".Activity.DoctorOfficeAddActivity" />
+        <activity
+            android:name=".Activity.DoctorOfficeDetailsActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.MedicalReportAddActivity" />
+        <activity android:name=".Activity.MedicalReportDetailsActivity" />
+        <activity android:name=".Activity.DoctorCallActivity" />
+        <activity android:name=".Activity.DoctorOnlineActivity" />
+        <activity
+            android:name=".Activity.JoApplyDetailsShowActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.JobApplyActive" />
+        <activity android:name=".Activity.JobCreateActive" />
+        <activity android:name=".Activity.JobInformationActivity" />
+        <activity android:name=".Activity.EmploymentOpurtunity" />
+        <activity android:name=".Activity.DashbordActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.SignUpActivity" />
+        <activity android:name=".Activity.SIgnInActivity" />
+        <activity
+            android:name=".Activity.PatientProfile"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.DoctorProfile"
+            android:windowSoftInputMode="stateHidden" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ef60819d47b2d7936de70f7d2dd6289eec18b596" />
+    </application>
+
+</manifest>

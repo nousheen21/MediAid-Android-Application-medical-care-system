@@ -1,0 +1,293 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/background"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".Fragments.PatientProfileInformation">
+
+        <!-- TODO: Update blank fragment layout -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TableRow
+                    android:id="@+id/trFullName"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Full Name"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvFullNameP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:enabled="false"
+                        android:text=" Mahmudul Islam"/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trAge"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Age"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvAgeP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="24 years" />
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trGender"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Gender"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvGenderP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="Male"/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trNationality"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Nationality"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvNationalityP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="Bangladeshi"/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trOccupation"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Occupation"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvOccupationP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="Farmer"/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trHeight"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Height"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvHeightP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="5 Feet 10 Inches  "/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trWeight"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Weight"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvWeight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="65KG"/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trAveragePressure"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Average Pressure"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvAvgPressureP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="120/80 BP"/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trBloodGroup"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Blood Group"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvBloodGroupP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="O-"/>
+
+                </TableRow>
+                <TableRow
+                    android:id="@+id/trContactAddress"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="Contact No"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvAddressP"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:enabled="false"
+                        android:text="Rajshahi"/>
+
+                </TableRow>
+                <TableRow android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPUpdate"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="Update"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPDone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="Done"/>
+
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

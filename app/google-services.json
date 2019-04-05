@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "358111850568",
+    "firebase_url": "https://smart-medical-care-system.firebaseio.com",
+    "project_id": "smart-medical-care-system",
+    "storage_bucket": "smart-medical-care-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358111850568:android:06afc3ebe0a49858",
+        "android_client_info": {
+          "package_name": "com.bekar.smartmedicalcare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqElk3lCu-OHHNdAjkeBJjxnwDOBVWsvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358111850568-rk6nl386bsjb3j632redllomh3dgh8gp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
