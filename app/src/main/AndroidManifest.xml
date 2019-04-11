@@ -53,6 +53,55 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="ef60819d47b2d7936de70f7d2dd6289eec18b596" />
+
+        <activity
+            android:name=".Activity.MS_AddMedicineActivity"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".Activity.HM_AddElementActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.HM_AddCategoryActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.MS_AddSupplierActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.MS_LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.MS_StoreRegisterActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.MS_StoreListActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.MS_RequestedMedicineSupplierViewActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.MS_RequestedMedicineActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.HM_LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.HM_HospitalRegisterActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.UserViewMedicineListActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.UserViewStoreListActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.UserViewHospitalListActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".Activity.TestActivity"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/sym_def_app_icon"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_addMed"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="Add Medicine" />
+        <item
+            android:id="@+id/nav_reqMed"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Request Medicine" />
+        <item
+            android:id="@+id/nav_reqList"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Requested List" />
+        <item
+            android:id="@+id/nav_supplierList"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Supplier List" />
+        <item
+            android:id="@+id/nav_signOut"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Signout" />
+    </group>
+
+</menu>

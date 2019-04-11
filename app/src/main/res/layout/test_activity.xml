@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/hospitalSystem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hospital System" />
+
+    <Button
+        android:id="@+id/medicalStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medical Store" />
+
+    <Button
+        android:id="@+id/navButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Video Call" />
+
+    <Button
+        android:id="@+id/medButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Medicine" />
+    <Button
+        android:id="@+id/storeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Store" />
+    <Button
+        android:id="@+id/hospitalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Hospital" />
+
+</LinearLayout>

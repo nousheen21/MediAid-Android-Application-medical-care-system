@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_02"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editTextStoreName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:textColorHint="@color/white"
+        android:inputType="textPersonName"
+        android:hint="Enter your store name" />
+
+    <EditText
+        android:id="@+id/editTextStoreAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:textColorHint="@color/white"
+        android:inputType="textPersonName"
+        android:hint="Enter your store address" />
+
+    <EditText
+        android:id="@+id/storePin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:maxLength="4"
+        android:textColorHint="@color/white"
+        android:hint="Enter four digit PIN"
+        android:inputType="numberPassword" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Register" />
+</LinearLayout>
