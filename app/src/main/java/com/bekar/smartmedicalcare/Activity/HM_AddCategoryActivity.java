@@ -48,7 +48,6 @@ public class HM_AddCategoryActivity extends AppCompatActivity {
 
         FirebaseApp app = FirebaseApp.getInstance("secondary");
 
-        // Get the database for the other app.
         databaseHMCategory = FirebaseDatabase.getInstance(app).getReference("HospitalData");
 
         categoryName = (EditText) findViewById(R.id.management_category);

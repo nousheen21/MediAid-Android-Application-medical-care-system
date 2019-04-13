@@ -95,8 +95,11 @@
             android:name=".Activity.UserViewStoreListActivity"
             android:theme="@style/Theme.AppCompat.Light"/>
         <activity
-            android:name=".Activity.UserViewHospitalListActivity"
+            android:name=".Activity.HM_HospitalListActivity"
             android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:name=".Activity.MS_SupplierLoginActivity"/>
+        <activity android:name=".Activity.MS_SupplierRegisterActivity"/>
+        <activity android:name=".Activity.UserViewDoctorListActivity"/>
         <activity
             android:name=".Activity.TestActivity"
             android:theme="@style/Theme.AppCompat.Light">

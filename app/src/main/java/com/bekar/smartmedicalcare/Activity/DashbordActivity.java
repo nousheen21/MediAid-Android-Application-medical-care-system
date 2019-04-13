@@ -73,14 +73,6 @@ public class DashbordActivity extends AppCompatActivity implements FirebaseAuth.
         auth=FirebaseAuth.getInstance();
         user=auth.getCurrentUser();
 
-        //for management database
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setApplicationId("1:275910108005:android:565f5de895c4dded") // Required for Analytics.
-                .setApiKey("AIzaSyDBRPUDQi28OurfEiEWbYGODY3Z5MFSP3s") // Required for Auth.
-                .setDatabaseUrl("https://hospital-management-705b9.firebaseio.com") // Required for RTDB.
-                .build();
-
-        FirebaseApp.initializeApp(this,options,"secondary");
 
 
         firestore=FirebaseFirestore.getInstance();
@@ -191,6 +183,8 @@ public class DashbordActivity extends AppCompatActivity implements FirebaseAuth.
                     startActivity(new Intent(getApplicationContext(),PatientsActivity.class));
                 }else if(titleList.get(position).equals("Hospital Search")){
                     startActivity(new Intent(getApplicationContext(),TestActivity.class));
+                }else if(titleList.get(position).equals("Medicine Search")){
+                    startActivity(new Intent(getApplicationContext(),UserViewMedicineListActivity.class));
                 }
             }
         });
@@ -340,6 +334,7 @@ public class DashbordActivity extends AppCompatActivity implements FirebaseAuth.
             if(user!=null){
                 auth.signOut();
                 auth.addAuthStateListener(this);
+                finish();
             }else{
                 Log.d("TAG", "onOptionsItemSelected: null");
             }

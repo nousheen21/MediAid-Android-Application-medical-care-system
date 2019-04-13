@@ -71,7 +71,7 @@ public class TestActivity extends AppCompatActivity {
         searchHospitalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), UserViewHospitalListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HM_HospitalListActivity.class);
                 startActivity(intent);
             }
         });

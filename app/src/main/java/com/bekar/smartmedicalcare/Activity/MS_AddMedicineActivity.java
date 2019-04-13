@@ -42,7 +42,7 @@ public class MS_AddMedicineActivity extends AppCompatActivity implements Navigat
         DatabaseReference databaseRequest;
         DatabaseReference databaseSupplier;
 
-        public static String storeName = "storeName";
+        public static String storeName = "supplierName";
         public static String storeAddress="Add";
 
         ListView listViewMedicine;

@@ -77,7 +77,7 @@ public class MS_StoreListActivity extends AppCompatActivity {
         });
     }
     private void search(String s) {
-        Query query = databaseStore.orderByChild("storeName")
+        Query query = databaseStore.orderByChild("supplierName")
                 .startAt(s)
                 .endAt(s + "\uf8ff");
         query.addListenerForSingleValueEvent(valueEventListener);

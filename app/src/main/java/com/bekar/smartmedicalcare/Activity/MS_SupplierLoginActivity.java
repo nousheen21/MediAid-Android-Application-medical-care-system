@@ -21,56 +21,55 @@ import javax.annotation.Nullable;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MS_LoginActivity extends AppCompatActivity {
-    EditText storeName;
-    EditText storePIN;
+public class MS_SupplierLoginActivity extends AppCompatActivity {
+    EditText supplierName;
+    EditText supplierPIN;
     Button signInButton;
     TextView registerView;
-    TextView supplierView;
 
-    public static final String STORE_NAME = "supplierName";
-    public static final String STORE_ADDRESS = "companyName";
+    public static final String SUPPLIER_NAME = "supplierName";
+    public static final String COMPANY_NAME = "companyName";
 
-    DatabaseReference databaseStore;
+    DatabaseReference databaseSupplier;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ms_login_activity);
+        setContentView(R.layout.ms_supplier_login_activity);
 
-        storeName = (EditText)findViewById(R.id.storeNameField);
-        storePIN = (EditText)findViewById(R.id.pinField);
+        supplierName = (EditText)findViewById(R.id.supplierNameField);
+        supplierPIN = (EditText)findViewById(R.id.pinField);
 
 
         FirebaseApp app = FirebaseApp.getInstance("secondary");
 
-        databaseStore = FirebaseDatabase.getInstance(app).getReference("StoreRegistrationData");
+        databaseSupplier = FirebaseDatabase.getInstance(app).getReference("SupplierRegistrationData");
 
         signInButton = (Button)findViewById(R.id.signInButton);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(storeName.getText()) || TextUtils.isEmpty(storePIN.getText())) {
+                if (TextUtils.isEmpty(supplierName.getText()) || TextUtils.isEmpty(supplierPIN.getText())) {
 
                     print("Field Empty!");
                 }else {
-                    databaseStore.addValueEventListener(new ValueEventListener() {
+                    databaseSupplier.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            String name = storeName.getText().toString().trim();
-                            String pin = storePIN.getText().toString().trim();
+                            String name = supplierName.getText().toString().trim();
+                            String pin = supplierPIN.getText().toString().trim();
                             for (DataSnapshot storeSnapshot : dataSnapshot.getChildren()) {
-                                MS_Store msStore = storeSnapshot.getValue(MS_Store.class);
-                                if (msStore.getStoreName().equalsIgnoreCase(name) && msStore.getStorePIN().equalsIgnoreCase(pin)) {
+                                MS_SupplierReg supplier = storeSnapshot.getValue(MS_SupplierReg.class);
+                                if (supplier.getSupplierName().equalsIgnoreCase(name) && supplier.getSupplierPIN().equalsIgnoreCase(pin)) {
 
-                                    Intent intent = new Intent(getApplicationContext(), MS_AddMedicineActivity.class);
-                                    intent.putExtra(STORE_NAME, msStore.getStoreName());
-                                    intent.putExtra(STORE_ADDRESS,msStore.getStoreAddress());
+                                    Intent intent = new Intent(getApplicationContext(), MS_StoreListActivity.class);
+                                    intent.putExtra(SUPPLIER_NAME, supplier.getSupplierName());
+                                    intent.putExtra(COMPANY_NAME,supplier.getSupplierCompany());
 
                                     startActivity(intent);
                                     print("Login successful");
-                                    storeName.setText(null);
-                                    storePIN.setText(null);
+                                    supplierName.setText(null);
+                                    supplierPIN.setText(null);
                                     finish();
                                 }
                             }
@@ -90,20 +89,11 @@ public class MS_LoginActivity extends AppCompatActivity {
         registerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MS_StoreRegisterActivity.class);
+                Intent intent = new Intent(getApplicationContext(),MS_SupplierRegisterActivity.class);
                 startActivity(intent);
             }
         });
 
-        supplierView = (TextView)findViewById(R.id.supplierViewButton);
-
-        supplierView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MS_SupplierLoginActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override

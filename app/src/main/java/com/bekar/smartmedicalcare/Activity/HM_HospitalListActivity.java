@@ -1,10 +1,14 @@
 package com.bekar.smartmedicalcare.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.bekar.smartmedicalcare.R;
 import com.google.firebase.FirebaseApp;
@@ -20,9 +24,14 @@ import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class UserViewHospitalListActivity extends AppCompatActivity {
+public class HM_HospitalListActivity extends AppCompatActivity {
     EditText searchHospital;
     DatabaseReference databaseHospital;
+    DatabaseReference databaseHospital2;
+
+    public static String hospitalName = "hospitalName";
+    public static final String CATEGORY_ID = "Category_id";
+
 
     ListView listViewHospital;
     List<HM_Hospital> hospitalList;
@@ -34,6 +43,7 @@ public class UserViewHospitalListActivity extends AppCompatActivity {
         FirebaseApp app = FirebaseApp.getInstance("secondary");
 
         databaseHospital = FirebaseDatabase.getInstance(app).getReference("HospitalRegistrationData");
+        databaseHospital2 = FirebaseDatabase.getInstance(app).getReference("HospitalData");
 
         listViewHospital = (ListView) findViewById(R.id.listViewHospital);
         hospitalList = new ArrayList<>();
@@ -61,16 +71,24 @@ public class UserViewHospitalListActivity extends AppCompatActivity {
                 }
             }
         });
-        /*listViewStore.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        listViewHospital.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MS_Store msStore = storeList.get(position);
-                Intent intent = new Intent(getApplicationContext(),MS_RequestedMedicineSupplierViewActivity.class );
+                HM_Hospital hmHospital = hospitalList.get(position);
 
-                startActivity(intent);
+                hospitalName = hmHospital.getHospitalName();
+                databaseHospital2.addValueEventListener(valueEventListener2);
+
             }
-        });*/
+        });
+
     }
+
+    private void print(String msg) {
+        Toast.makeText(this,msg,Toast.LENGTH_LONG).show();
+    }
+
     private void search(String s) {
         Query query = databaseHospital.orderByChild("hospitalName")
                 .startAt(s)
@@ -94,9 +112,31 @@ public class UserViewHospitalListActivity extends AppCompatActivity {
                 HM_Hospital hmHospital = hospitalSnapshot.getValue(HM_Hospital.class);
                 hospitalList.add(hmHospital);
             }
-            HM_HospitalList adapter = new HM_HospitalList(UserViewHospitalListActivity.this,hospitalList);
+            HM_HospitalList adapter = new HM_HospitalList(HM_HospitalListActivity.this,hospitalList);
             listViewHospital.setAdapter(adapter);
 
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
+
+    ValueEventListener valueEventListener2 = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+
+            for (DataSnapshot hospitalSnapshot: dataSnapshot.getChildren()){
+                HM_Category hmCategory = hospitalSnapshot.getValue(HM_Category.class);
+
+                if (hmCategory.getHospitalName().equalsIgnoreCase(hospitalName) && hmCategory.getCategoryName().equalsIgnoreCase("Doctor List")) {
+
+                    Intent intent = new Intent(getApplicationContext(), UserViewDoctorListActivity.class);
+                    intent.putExtra(CATEGORY_ID, hmCategory.getCategoryId());
+                    startActivity(intent);
+                }
+            }
         }
 
         @Override

@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -37,6 +38,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         //Fabric.with(this, new Crashlytics());
         FirebaseApp.initializeApp(this);
+
+        //for management database
+        FirebaseOptions options = new FirebaseOptions.Builder()
+                .setApplicationId("1:275910108005:android:565f5de895c4dded") // Required for Analytics.
+                .setApiKey("AIzaSyDBRPUDQi28OurfEiEWbYGODY3Z5MFSP3s") // Required for Auth.
+                .setDatabaseUrl("https://hospital-management-705b9.firebaseio.com") // Required for RTDB.
+                .build();
+
+        try {
+            FirebaseApp.getInstance("secondary");
+
+        }catch (IllegalStateException e){
+            FirebaseApp.initializeApp(this,options,"secondary");
+
+        }
+
+
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         binding.btnSignIn.setOnClickListener(this);

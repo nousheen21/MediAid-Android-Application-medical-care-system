@@ -31,7 +31,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class HM_AddElementActivity extends AppCompatActivity {
+public class UserViewDoctorListActivity extends AppCompatActivity {
 
     TextView textViewCategoryName;
     ListView listViewElements;
@@ -41,7 +41,6 @@ public class HM_AddElementActivity extends AppCompatActivity {
     DatabaseReference databaseElements;
 
     List<HM_Element> elements;
-   // List<String> custom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +53,13 @@ public class HM_AddElementActivity extends AppCompatActivity {
         textViewCategoryName = (TextView) findViewById(R.id.management_category);
 
         addElementButton = (FloatingActionButton) findViewById(R.id.add_Element_button);
+        addElementButton.setVisibility(View.INVISIBLE);
 
         listViewElements = (ListView) findViewById(R.id.listViewElement);
 
         Intent intent = getIntent();
 
         elements = new ArrayList<>();
-        //custom = new ArrayList<>();
 
         // for search
         searchbar = (EditText)findViewById(R.id.searchbar);
@@ -87,39 +86,24 @@ public class HM_AddElementActivity extends AppCompatActivity {
         });
 
 
-        String id = intent.getStringExtra(HM_AddCategoryActivity.CATEGORY_ID);
-        String name = intent.getStringExtra(HM_AddCategoryActivity.CATEGORY_NAME);
+        String id = intent.getStringExtra(HM_HospitalListActivity.CATEGORY_ID);
 
-        textViewCategoryName.setText(name);
+        textViewCategoryName.setText("Doctor List");
 
         databaseElements = FirebaseDatabase.getInstance(app).getReference("Elements").child(id);
 
-        addElementButton.setOnClickListener(new View.OnClickListener() {
+        /*addElementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addElementDialogue();
             }
-        });
+        });*/
 
-        listViewElements.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
-                HM_Element hmElement = elements.get(position);
-
-                showUpdateDialog(hmElement.getElementId(),hmElement.getElementName(),hmElement.getElementInfo(),hmElement.getElementDept());
-                return true;
-            }
-        });
     }
     private void search(String s) {
         Query query = databaseElements.orderByChild("elementName")
                 .startAt(s)
                 .endAt(s + "\uf8ff");
-        /*Query query2 = databaseElements.orderByChild("elementName");
-        String ss = "sam";
-        Log.d("samin",databaseElements.orderByChild("elementName").toString());
-        */
         query.addListenerForSingleValueEvent(valueEventListener);
     }
 
@@ -133,15 +117,12 @@ public class HM_AddElementActivity extends AppCompatActivity {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             elements.clear();
-            //custom.clear();
 
             for (DataSnapshot elementSnapshot: dataSnapshot.getChildren()){
                 HM_Element element = elementSnapshot.getValue(HM_Element.class);
                 elements.add(element);
-                //custom.add(element.getElementName().toString());
             }
-            //print(custom.get(0));
-            HM_ElementList elementListAdapter = new HM_ElementList(HM_AddElementActivity.this, elements);
+            HM_ElementList elementListAdapter = new HM_ElementList(UserViewDoctorListActivity.this, elements);
             listViewElements.setAdapter(elementListAdapter);
         }
 
@@ -151,7 +132,7 @@ public class HM_AddElementActivity extends AppCompatActivity {
         }
     };
 
-    private void showUpdateDialog(final String elementId, final String elementName, final String elementInfo, final String elementDept){
+    /*private void showUpdateDialog(final String elementId, final String elementName, final String elementInfo, final String elementDept){
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater inflater = getLayoutInflater();
@@ -264,7 +245,7 @@ public class HM_AddElementActivity extends AppCompatActivity {
         databaseElements.child(id).setValue(element);
         Toast.makeText(this, "Added successfully!",Toast.LENGTH_LONG).show();
 
-    }
+    }*/
 
     public void print(String msg){
         Toast.makeText(this, msg,Toast.LENGTH_LONG).show();
