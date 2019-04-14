@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.bekar.smartmedicalcare.Activity.AdminPanelActivity;
 import com.bekar.smartmedicalcare.Activity.DashbordActivity;
 import com.bekar.smartmedicalcare.Activity.SignUpActivity;
+import com.bekar.smartmedicalcare.Activity.TestActivity;
 import com.bekar.smartmedicalcare.Utils.Utils;
 import com.bekar.smartmedicalcare.databinding.ActivityMainBinding;
 
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding.tvAdminPanel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AdminPanelActivity.class));
+                startActivity(new Intent(getApplicationContext(), TestActivity.class));
             }
         });
 

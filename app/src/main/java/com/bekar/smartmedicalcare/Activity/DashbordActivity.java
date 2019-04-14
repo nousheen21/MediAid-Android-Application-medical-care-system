@@ -182,7 +182,7 @@ public class DashbordActivity extends AppCompatActivity implements FirebaseAuth.
                 }else if(titleList.get(position).equals("Patients")){
                     startActivity(new Intent(getApplicationContext(),PatientsActivity.class));
                 }else if(titleList.get(position).equals("Hospital Search")){
-                    startActivity(new Intent(getApplicationContext(),TestActivity.class));
+                    startActivity(new Intent(getApplicationContext(),HM_HospitalListActivity.class));
                 }else if(titleList.get(position).equals("Medicine Search")){
                     startActivity(new Intent(getApplicationContext(),UserViewMedicineListActivity.class));
                 }
