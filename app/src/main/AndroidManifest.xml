@@ -100,6 +100,7 @@
         <activity android:name=".Activity.MS_SupplierLoginActivity"/>
         <activity android:name=".Activity.MS_SupplierRegisterActivity"/>
         <activity android:name=".Activity.UserViewDoctorListActivity"/>
+        <activity android:name=".Activity.AdminDashbordActivity"/>
         <activity
             android:name=".Activity.TestActivity"
             android:theme="@style/Theme.AppCompat.Light">

@@ -28,10 +28,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
-        android:maxLength="4"
         android:textColorHint="@color/white"
-        android:hint="Your PIN"
-        android:inputType="numberPassword" />
+        android:hint="Your password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/signInButton"
