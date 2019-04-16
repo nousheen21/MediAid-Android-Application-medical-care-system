@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarDashboard"
-                app:title="Smart Medical Care"
+                app:title="MediAid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
