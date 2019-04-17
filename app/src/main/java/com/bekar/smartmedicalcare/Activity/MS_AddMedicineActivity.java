@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.bekar.smartmedicalcare.MainActivity;
 import com.bekar.smartmedicalcare.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.FirebaseApp;
@@ -44,6 +45,8 @@ public class MS_AddMedicineActivity extends AppCompatActivity implements Navigat
 
         public static String storeName = "supplierName";
         public static String storeAddress="Add";
+
+        FirebaseApp app;
 
         ListView listViewMedicine;
         List<MS_Medicine> medicineList;
@@ -81,7 +84,7 @@ public class MS_AddMedicineActivity extends AppCompatActivity implements Navigat
             navigationView.setNavigationItemSelectedListener(this);
 
             //FirebaseApp.initializeApp(this);
-            FirebaseApp app = FirebaseApp.getInstance("secondary");
+            app = FirebaseApp.getInstance("secondary");
 
             databaseMedicine = FirebaseDatabase.getInstance(app).getReference("MedicalStoreData");
             databaseRequest = FirebaseDatabase.getInstance(app).getReference("RequestMedicineData");
@@ -342,7 +345,7 @@ public class MS_AddMedicineActivity extends AppCompatActivity implements Navigat
 
 
     private void deleteMedicine(String medicineId, String medicineName){
-            DatabaseReference drMedicine = FirebaseDatabase.getInstance().getReference("MedicalStoreData").child(medicineId);
+            DatabaseReference drMedicine = FirebaseDatabase.getInstance(app).getReference("MedicalStoreData").child(medicineId);
 
             drMedicine.removeValue();
 
@@ -351,7 +354,9 @@ public class MS_AddMedicineActivity extends AppCompatActivity implements Navigat
 
         private void updateMedicine(String id, String name, String company, String price, String availability){
 
-            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("MedicalStoreData").child(id);
+            FirebaseApp app = FirebaseApp.getInstance("secondary");
+
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance(app).getReference("MedicalStoreData").child(id);
 
             MS_Medicine ms_medicine = new MS_Medicine(id, name, company, price,storeName,storeAddress,availability);
             databaseReference.setValue(ms_medicine);
@@ -424,9 +429,8 @@ public class MS_AddMedicineActivity extends AppCompatActivity implements Navigat
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_profile) {
-
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_addMed) {
             addMedicineDialog();
 
@@ -444,6 +448,9 @@ public class MS_AddMedicineActivity extends AppCompatActivity implements Navigat
             startActivity(intent);
 
         } else if (id == R.id.nav_signOut) {
+            Intent intent = new Intent(this,MS_LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

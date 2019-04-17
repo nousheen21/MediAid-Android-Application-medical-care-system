@@ -35,8 +35,8 @@ public class MS_MedicineList extends ArrayAdapter<MS_Medicine> {
         MS_Medicine msMedicine = medicineList.get(position);
 
         viewMedicineName.setText(msMedicine.getMedicineName());
-        viewCompanyName.setText(msMedicine.getCompanyName());
-        viewPrice.setText(msMedicine.getMedicinePrice());
+        viewCompanyName.setText("Company: " + msMedicine.getCompanyName());
+        viewPrice.setText("Price: " + msMedicine.getMedicinePrice() + " (BDT)");
         viewStock.setText(msMedicine.getAvailable());
 
 

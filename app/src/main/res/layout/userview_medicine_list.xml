@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
     <TextView
         android:id="@+id/viewMedicineName"
@@ -14,89 +16,43 @@
         android:textColor="@color/white"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/viewCompanyName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:gravity="center"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Company: "
-            android:textColor="@color/white"
-            android:gravity="left"/>
-        <TextView
-            android:id="@+id/viewCompanyName"
-            android:layout_width="0dp"
-            android:layout_weight="1.5"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:gravity="left"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Store: "
-            android:textColor="@color/white"
-            android:gravity="left"/>
-        <TextView
-            android:id="@+id/viewStoreName"
-            android:layout_width="0dp"
-            android:layout_weight="1.5"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:gravity="left"/>
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/viewStoreName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:gravity="center"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Price:  "
-            android:textColor="@color/white"
-            android:gravity="left"/>
+    <TextView
+        android:id="@+id/viewPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/viewPrice"
-            android:layout_width="0dp"
-            android:layout_weight="1.5"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:gravity="left"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Address:  "
-            android:textColor="@color/white"
-            android:gravity="left"/>
+    <TextView
+        android:id="@+id/viewStoreAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/viewStoreAddress"
-            android:layout_width="0dp"
-            android:layout_weight="1.5"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:gravity="left"/>
-    </LinearLayout>
     <TextView
         android:id="@+id/viewStock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_marginRight="10dp"
         android:textColor="@color/white"
-        android:gravity="center"/>
+        android:gravity="center" />
 </LinearLayout>

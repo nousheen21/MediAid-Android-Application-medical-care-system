@@ -34,8 +34,8 @@ public class MS_SupplierList extends ArrayAdapter<MS_Supplier> {
         MS_Supplier msSupplier = supplierList.get(position);
 
         viewSupplierName.setText(msSupplier.getSupplierName());
-        viewSupplierCompany.setText(msSupplier.getSupplierCompany());
-        viewStoreName.setText(msSupplier.getStoreName());
+        viewSupplierCompany.setText("Company: " + msSupplier.getSupplierCompany());
+        viewStoreName.setText("Store: " + msSupplier.getStoreName());
 
 
         return listViewItem;

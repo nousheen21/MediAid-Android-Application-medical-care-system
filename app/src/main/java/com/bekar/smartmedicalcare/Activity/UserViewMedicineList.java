@@ -37,10 +37,10 @@ public class UserViewMedicineList extends ArrayAdapter<MS_Medicine> {
         MS_Medicine msMedicine = medicineList.get(position);
 
         viewMedicineName.setText(msMedicine.getMedicineName());
-        viewCompanyName.setText(msMedicine.getCompanyName());
-        viewPrice.setText(msMedicine.getMedicinePrice());
-        viewStoreName.setText(msMedicine.getStoreName());
-        viewStoreAddress.setText(msMedicine.getStoreAddress());
+        viewCompanyName.setText("Company: " + msMedicine.getCompanyName());
+        viewPrice.setText("Price: " + msMedicine.getMedicinePrice() + " (BDT)");
+        viewStoreName.setText("Store: " + msMedicine.getStoreName());
+        viewStoreAddress.setText("Address: " + msMedicine.getStoreAddress());
         viewStock.setText(msMedicine.getAvailable());
 
 
