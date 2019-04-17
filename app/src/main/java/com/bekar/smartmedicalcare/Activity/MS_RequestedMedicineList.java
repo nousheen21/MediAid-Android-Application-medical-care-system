@@ -33,7 +33,7 @@ public class MS_RequestedMedicineList extends ArrayAdapter<MS_RequestMedicine> {
         MS_RequestMedicine msMedicine = medicineList.get(position);
 
         viewMedName.setText(msMedicine.getReqMedicineName());
-        viewCompany.setText(msMedicine.getReqCompanyName());
+        viewCompany.setText("Company: " + msMedicine.getReqCompanyName());
 
         return listViewItem;
     }

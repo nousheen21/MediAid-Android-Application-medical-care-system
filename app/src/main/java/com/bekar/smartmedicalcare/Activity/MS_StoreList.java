@@ -32,8 +32,8 @@ public class MS_StoreList extends ArrayAdapter<MS_Store> {
 
         MS_Store msStore = storeList.get(position);
 
-        viewStoreName.setText(msStore.getStoreName());
-        viewStoreAddress.setText(msStore.getStoreAddress());
+        viewStoreName.setText("Store: " + msStore.getStoreName());
+        viewStoreAddress.setText("Address: " + msStore.getStoreAddress());
 
 
         return listViewItem;
